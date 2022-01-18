@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
+</head>
+<body>
+
+<form action="{% url 'log_in' %}" method="post">
+  {% csrf_token %}
+<div class="body"> </div>
+		<div class="grad"></div>
+
+		<div class="header">
+			<h1 style="color:#5DADE2">...welcome !!</h1>
+			<div>My<span>_Diary</span></div>
+		</div>
+		<br>
+		<div class="login">
+				<input type="text" placeholder="username" name="mobile"><br>
+				<input type="password" placeholder="password" name="password"><br><br>
+				<button style="color:blue;text-align:center; type="submit" value="Login">login</button>
+		</div>
+
+</body>
+</html>

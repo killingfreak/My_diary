@@ -1,0 +1,9 @@
+{% for student in all_students %}
+<li><a href="/list/{{ student.id }}">{{ student.first_name }} {{ student.last_name }} ({{ student.course }})</a>
+
+<p><a class="btn btn-lg btn-success" href="{% url "delete" pk=student.id %}"role="button">Delete</a>
+            <a class="btn btn-lg btn-success" href="{% url "update" pk=student.id %}" role="button">Update</a>
+
+ </p>
+
+{% endfor%}

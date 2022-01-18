@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>view notes</title>
+</head>
+<body>
+    <form action="{%url 'delete' }" method="post">
+        {% csrf_token %}
+    <h1>welcome</h1>
+    <table>
+        <thead>
+        <th>date&time</th>
+
+        <th>subject</th>
+        <th>note</th>
+        <th>delete</th>
+        </thead>
+        <tbody>
+        {% for i in view%}
+        <tr>
+            <td>{{i.date}}</td>
+
+            <td>{{i.subject}}</td>
+            <td>{{i.text}}</td>
+            <td><a href="{% url 'delete' i.id %}">delete</a> </td>
+            <td><a href="{% url 'updateview' i.id %}">update</a> </td>
+        </tr>
+        {%endfor%}
+        </tbody>
+    </table>
+
+    </form>
+<h3 style="color:green">{{id}}{{delete}}</h3>
+</body>
+</html>
